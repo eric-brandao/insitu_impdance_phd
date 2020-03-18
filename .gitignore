@@ -7,7 +7,6 @@ Measurement/
 *.mexw32
 extended_field.m
 extended_field_BGn.m
-extended_field_mat.m
 extended_field_matbeam.m
 extended_field_opt.m
 extended_field_T.m
