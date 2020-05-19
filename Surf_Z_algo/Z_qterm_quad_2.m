@@ -85,7 +85,7 @@ for b=Range;
                 fZg=Zr(b)-...
                     (((exp(-1i*k*R1)/R1)+(exp(-1i*k*R2)/R2)-...
                     (2*k/Zg)*(quad(intp,0,20)))./D);
-                clc;
+%                 clc;
             end
             % Check convergence and stop if YES
             if abs(fZg)<0.000001;

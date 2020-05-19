@@ -1,19 +1,19 @@
-clc; clearvars; close all
+clc; clearvars; close all; format long;
 %%%% A minimalistic example on the simulation of in situ impedance
 %%%% measurement.
 
 %% Set some general configurations
-general.freq = 100:20:4000; %%% frequency vector
+general.freq = 1000;%100:50:3000; %%% frequency vector
 general.c0 = 343; %%% sound speed
 general.rho0 = 1.21; %%% air density
 general.k0 = 2*pi*general.freq/general.c0;
 %% Set sound source(s) - Define coordinates
 sources(1).coord = [0, 0, 0.3]; 
-sources(2).coord = [1, 0, 1.0]; 
+% sources(2).coord = [1, 0, 1.0]; 
 
 %% Set receivers - Define coordinates
 receivers(1).coord = [0, 0, 0.01];
-receivers(2).coord = [0, 0, 0.02];
+% receivers(2).coord = [0, 0, 0.02];
 %% Porous material simulation
 porous.resist = 9209; %%% Flow resistivity
 porous.porosity = 0.99; %%% porosity

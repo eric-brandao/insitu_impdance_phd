@@ -70,7 +70,6 @@ for b=Range;
     %Zfinn(b,1)=Zg1;
     Z_qterm_quad(b,1)=Zg1;
 end
-a
 close(hqterm)
 clear D Zf Zg Zg1 Zg2 fZg fZg1 fZg2 a b ans
 

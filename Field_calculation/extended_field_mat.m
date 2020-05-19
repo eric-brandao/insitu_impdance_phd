@@ -25,7 +25,7 @@ for ms=1:length(f)
         F=@(s)(((2.*exp(-k0(ms)*(sqrt(s.^2-1))*(hs+z))).*k0(ms).*s.*besselj(0,k0(ms).*s*r))./...
         (((sqrt(s.^2-1))+m(ms).*(sqrt(s.^2-n(ms).^2)).*tanh(k0(ms)*dimm*sqrt(s.^2-n(ms).^2)))));
         Ip=quadl(F,0,B);
-%         Ip=integral(F,0,B,'RelTol',1e-8,'AbsTol',1e-13,'Waypoints',0:0.0001:1);
+%         Ip=integral(F,0,B,'RelTol',1e-8,'AbsTol',1e-13,'Waypoints',0:0.01:1)
         p_ext(ms)=((exp(-1i*k0(ms)*R1))/R1)-((exp(-1i*k0(ms)*R2))/R2)+Ip;
 
         %%% Particle velocity r
@@ -41,7 +41,9 @@ for ms=1:length(f)
         (((sqrt(s.^2-1))+m(ms).*(sqrt(s.^2-n(ms).^2)).*tanh(k0(ms)*dimm*sqrt(s.^2-n(ms).^2)))));
         Iu=quadl(G,0,B);
 %         Iu=integral(G,0,B,'RelTol',1e-8,'AbsTol',1e-13,'Waypoints',0:0.0001:1);
-        u_extz(ms)=(1./(rho0*c0)).*(((exp(-1i*k0(ms)*R1))/R1).*((1./(1i*k0(ms)*R1))+1).*((hs-z)/R1)+...
+%         u_extz(ms)=(1./(rho0*c0)).*(((exp(-1i*k0(ms)*R1))/R1).*((1./(1i*k0(ms)*R1))+1).*((hs-z)/R1)+...
+%             ((exp(-1i*k0(ms)*R2))/R2).*((1./(1i*k0(ms)*R2))+1).*((hs+z)/R2)-(1/1i)*Iu);
+        u_extz(ms)=(((exp(-1i*k0(ms)*R1))/R1).*((1./(1i*k0(ms)*R1))+1).*((hs-z)/R1)+...
             ((exp(-1i*k0(ms)*R2))/R2).*((1./(1i*k0(ms)*R2))+1).*((hs+z)/R2)-(1/1i)*Iu);
 %         clear Iu
         
